@@ -67,42 +67,51 @@ export function ComponentName({ children, ...props }: ComponentNameProps) {
 
 ## 🌿 Fluxo Git
 
-### 1. Iniciando uma Nova Feature
+### Regras de Proteção
+- Branch `develop` é protegida e requer aprovação via Pull Request
+- Branch `main` (produção) é protegida e requer aprovação via Pull Request
+- Commits diretos em `develop` e `main` não são permitidos
+- Pull Requests precisam de pelo menos uma aprovação para merge
+- Reviews antigos são descartados quando novos commits são enviados
+
+### Fluxo de Trabalho
+
+#### 1. Desenvolvimento de Feature
 ```bash
 # Atualize a branch develop
 git checkout develop
 git pull origin develop
 
-# Crie uma nova branch
+# Crie uma branch de feature
 git checkout -b feature/nome-da-feature
-```
 
-### 2. Durante o Desenvolvimento
-```bash
-# Faça commits frequentes
+# Trabalhe na feature e faça commits
 git add .
 git commit -m "feat: descrição da alteração"
 
-# Mantenha sua branch atualizada
-git pull origin develop
-```
-
-### 3. Finalizando a Feature
-```bash
-# Push para o repositório
+# Push da branch
 git push origin feature/nome-da-feature
-
-# Crie um Pull Request para develop no GitHub
 ```
 
-### Padrões de Commit
-- `feat`: Nova funcionalidade
-- `fix`: Correção de bug
-- `docs`: Documentação
-- `style`: Formatação
-- `refactor`: Refatoração
-- `test`: Testes
-- `chore`: Manutenção
+#### 2. Merge para Develop
+1. Crie um Pull Request da sua feature para `develop`
+2. Aguarde a revisão e aprovação
+3. Após aprovado, faça o merge para `develop`
+
+#### 3. Promoção para Produção
+1. Quando `develop` estiver pronta para produção:
+```bash
+# Crie uma branch de release a partir de develop
+git checkout develop
+git pull origin develop
+git checkout -b release/v1.x.x
+```
+
+2. Crie um Pull Request de `release/v1.x.x` para `main`
+3. Aguarde revisão e aprovação
+4. Após aprovado, faça o merge para `main`
+
+### Fluxo Visual
 
 ## 🎨 Criando Componentes
 
