@@ -1,0 +1,38 @@
+.theme-toggle {
+  position: fixed;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-full);
+  background: var(--bg-secondary);
+  border: var(--neon-border-width) solid var(--primary);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-base);
+  z-index: var(--z-index-modal);
+}
+
+.theme-toggle:hover {
+  background: var(--primary);
+  color: var(--text-over-primary);
+  box-shadow: 0 0 var(--neon-glow-intensity) rgba(var(--primary-rgb), 0.5);
+}
+
+.theme-toggle:focus-visible {
+  outline: var(--neon-border-width) solid var(--primary);
+  outline-offset: var(--spacing-xs);
+}
+
+.theme-toggle-icon {
+  width: 24px;
+  height: 24px;
+  transition: var(--transition-base);
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(360deg);
+} 

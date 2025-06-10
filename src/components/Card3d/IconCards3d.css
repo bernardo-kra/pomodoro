@@ -1,0 +1,361 @@
+/* Base styles */
+.icon-card-3d-wrapper {
+  perspective: var(--card-perspective);
+  padding: var(--spacing-md);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+}
+
+.icon-card-3d-wrapper.disabled {
+  cursor: not-allowed;
+  opacity: var(--disabled-opacity);
+}
+
+.icon-card-3d-wrapper:focus-visible {
+  outline: var(--neon-border-width) solid var(--primary);
+  outline-offset: var(--spacing-xs);
+  border-radius: var(--border-radius-lg);
+}
+
+/* Card sizes */
+.size-small {
+  width: var(--card-size-small);
+  height: var(--card-size-small);
+  font-size: var(--icon-size-small);
+}
+
+.size-default {
+  width: var(--card-size-default);
+  height: var(--card-size-default);
+  font-size: var(--icon-size-default);
+}
+
+.size-big {
+  width: var(--card-size-big);
+  height: var(--card-size-big);
+  font-size: var(--icon-size-big);
+}
+
+.size-ultra {
+  width: var(--card-size-ultra);
+  height: var(--card-size-ultra);
+  font-size: var(--icon-size-ultra);
+}
+
+/* Icon sizes based on card size */
+.size-small .icon-wrapper { font-size: 2rem; }
+.size-default .icon-wrapper { font-size: 3rem; }
+.size-big .icon-wrapper { font-size: 4rem; }
+.size-ultra .icon-wrapper { font-size: 6rem; }
+
+/* Base card styles */
+.icon-card-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-lg);
+  transform-style: preserve-3d;
+  transition: var(--transition-base);
+  overflow: hidden;
+  z-index: var(--z-index-card);
+}
+
+.icon-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  z-index: var(--z-index-card);
+  will-change: transform;
+  transition: var(--transition-base);
+}
+
+.icon-wrapper.pulsing {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.icon-wrapper.shaking {
+  animation: shake 0.2s ease-in-out;
+}
+
+/* Click effects */
+.click-ripple {
+  position: relative;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: var(--border-radius-full);
+  transform: scale(0);
+  animation: ripple var(--ripple-duration) linear;
+  background-color: var(--ripple-color);
+  width: var(--ripple-size);
+  height: var(--ripple-size);
+  margin-left: calc(var(--ripple-size) / -2);
+  margin-top: calc(var(--ripple-size) / -2);
+  z-index: var(--z-index-base);
+}
+
+.click-expand.clicked {
+  transform: scale(1.05) !important;
+}
+
+.click-compress.clicked {
+  transform: scale(0.95) !important;
+}
+
+.flash-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--flash-color);
+  opacity: 0;
+  pointer-events: none;
+  z-index: var(--z-index-overlay);
+}
+
+.click-flash.clicked .flash-overlay {
+  animation: flash var(--animation-speed-normal) ease-out;
+}
+
+.click-bounce.clicked .icon-wrapper {
+  animation: click-bounce var(--animation-speed-normal) var(--transition-bounce);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(var(--ripple-scale));
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes click-bounce {
+  0% {
+    transform: translate3d(0, 0, var(--card-z-distance));
+  }
+  50% {
+    transform: translate3d(0, calc(var(--card-bounce-amount) * -1), var(--card-z-distance));
+  }
+  100% {
+    transform: translate3d(0, 0, var(--card-z-distance));
+  }
+}
+
+/* Card shadow */
+.card-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transform: translateZ(-40px);
+  filter: blur(20px);
+  transition: all 0.2s ease-out;
+}
+
+/* Motion effects specific styles */
+.motion-float .icon-card-3d:hover {
+  transform: translateY(calc(var(--card-float-amount) * -1));
+}
+
+.motion-bounce .icon-card-3d:hover {
+  transform: translateY(calc(var(--card-bounce-amount) * -1));
+  transition: var(--transition-bounce);
+}
+
+.motion-spin .icon-card-3d:hover {
+  transform: rotateY(var(--card-spin-amount));
+  transition: var(--transition-bounce);
+}
+
+.motion-magnetic .icon-card-3d:hover {
+  transition: var(--transition-smooth);
+}
+
+.motion-pulse .icon-wrapper.pulsing {
+  transform: scale(var(--card-pulse-scale));
+}
+
+.motion-shake .icon-wrapper.shaking {
+  transform: rotate(var(--card-shake-angle));
+}
+
+.motion-wave .icon-card-3d {
+  animation: wave 2s ease-in-out infinite;
+}
+
+/* Classic effect */
+.effect-classic {
+  box-shadow: var(--shadow-lg);
+}
+
+.effect-classic .card-shadow {
+  background: var(--card-shadow-color);
+  opacity: 0.5;
+}
+
+.effect-classic.hovered {
+  box-shadow: var(--shadow-xl);
+}
+
+.effect-classic.hovered .card-shadow {
+  opacity: 0.8;
+  transform: translateZ(calc(var(--card-z-distance) * -1.5));
+}
+
+/* Neon effect */
+.effect-neon {
+  box-shadow: 0 0 var(--neon-glow-intensity) rgba(var(--primary-rgb), 0.5);
+  border: var(--neon-border-width) solid var(--primary);
+}
+
+.effect-neon .neon-glow {
+  position: absolute;
+  inset: calc(var(--neon-border-width) * -1);
+  border-radius: calc(var(--border-radius-lg) + var(--neon-border-width));
+  background: transparent;
+  transition: var(--transition-base);
+  opacity: 0;
+  box-shadow: 
+    0 0 var(--neon-glow-intensity) var(--primary),
+    0 0 calc(var(--neon-glow-intensity) * 2) var(--primary);
+  z-index: var(--z-index-base);
+}
+
+.effect-neon.hovered .neon-glow {
+  opacity: 0.5;
+}
+
+/* Glass effect */
+.effect-glass {
+  background: var(--card-glass-bg) !important;
+  backdrop-filter: blur(var(--glass-blur-amount));
+  border: var(--neon-border-width) solid var(--card-glass-border);
+}
+
+.effect-glass .glass-reflection {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--card-glass-reflection) 0%,
+    transparent 100%
+  );
+  border-radius: var(--border-radius-lg);
+  opacity: var(--glass-reflection-opacity);
+  transition: var(--transition-base);
+  z-index: var(--z-index-base);
+}
+
+.effect-glass.hovered .glass-reflection {
+  opacity: calc(var(--glass-reflection-opacity) * 2);
+}
+
+/* Cosmic effect */
+.effect-cosmic {
+  border: none;
+  overflow: hidden;
+}
+
+.effect-cosmic .cosmic-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    var(--cosmic-gradient-1),
+    var(--cosmic-gradient-2),
+    var(--cosmic-gradient-1)
+  );
+  animation: cosmic-bg 8s ease infinite;
+  opacity: 0.9;
+  z-index: var(--z-index-base);
+}
+
+.effect-cosmic .cosmic-stars {
+  position: absolute;
+  inset: -50%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, var(--cosmic-star-color), transparent),
+    radial-gradient(2px 2px at 40px 70px, var(--cosmic-star-color), transparent),
+    radial-gradient(2px 2px at 50px 160px, var(--cosmic-star-color), transparent),
+    radial-gradient(2px 2px at 90px 40px, var(--cosmic-star-color), transparent),
+    radial-gradient(2px 2px at 130px 80px, var(--cosmic-star-color), transparent),
+    radial-gradient(2px 2px at 160px 120px, var(--cosmic-star-color), transparent);
+  background-repeat: repeat;
+  animation: cosmic-stars 20s linear infinite;
+  opacity: 0.6;
+  z-index: var(--z-index-base);
+  pointer-events: none;
+}
+
+.effect-cosmic .cosmic-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--cosmic-glow),
+    transparent 60%
+  );
+  animation: cosmic-glow 4s ease infinite;
+  z-index: var(--z-index-base);
+  pointer-events: none;
+}
+
+@keyframes cosmic-bg {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes cosmic-stars {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(-100%) rotate(45deg);
+  }
+}
+
+@keyframes cosmic-glow {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Interactive effects */
+.motion-tilt .icon-card-3d:hover {
+  transform: rotateX(calc(var(--card-tilt-amount) * -1)) rotateY(var(--card-tilt-amount));
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(var(--card-wave-amplitude) * -1));
+  }
+} 

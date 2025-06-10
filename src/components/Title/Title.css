@@ -1,0 +1,279 @@
+.title {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  transition: var(--transition-base);
+  max-width: 100%;
+}
+
+/* Sizes */
+.title.size-xs { font-size: var(--font-size-xs); }
+.title.size-sm { font-size: var(--font-size-sm); }
+.title.size-md { font-size: var(--font-size-md); }
+.title.size-lg { font-size: var(--font-size-lg); }
+.title.size-xl { font-size: var(--font-size-xl); }
+.title.size-2xl { font-size: var(--font-size-2xl); }
+.title.size-3xl { font-size: calc(var(--font-size-2xl) * 1.25); }
+.title.size-4xl { font-size: calc(var(--font-size-2xl) * 1.5); }
+
+/* Weights */
+.title.weight-light { font-weight: 300; }
+.title.weight-regular { font-weight: 400; }
+.title.weight-medium { font-weight: 500; }
+.title.weight-semibold { font-weight: 600; }
+.title.weight-bold { font-weight: 700; }
+.title.weight-black { font-weight: 900; }
+
+/* Alignment */
+.title.align-left { text-align: left; }
+.title.align-center { text-align: center; }
+.title.align-right { text-align: right; }
+
+/* Width */
+.title.width-auto { width: auto; }
+.title.width-full { width: 100%; }
+.title.width-half { width: 50%; }
+.title.width-third { width: 33.333%; }
+.title.width-quarter { width: 25%; }
+
+/* Spacing */
+.title.spacing-none { letter-spacing: 0; }
+.title.spacing-tight { letter-spacing: -0.025em; }
+.title.spacing-normal { letter-spacing: 0; }
+.title.spacing-relaxed { letter-spacing: 0.025em; }
+.title.spacing-loose { letter-spacing: 0.05em; }
+
+/* Text Decorations */
+.title.uppercase { text-transform: uppercase; }
+.title.italic { font-style: italic; }
+.title.underline { text-decoration: underline; }
+.title.line-through { text-decoration: line-through; }
+
+/* Effects */
+.title.effect-none {
+  color: var(--text-primary);
+}
+
+.title.effect-neon {
+  color: var(--primary);
+  text-shadow: 
+    0 0 7px var(--primary),
+    0 0 10px var(--primary),
+    0 0 21px var(--primary),
+    0 0 42px rgba(var(--primary-rgb), 0.5),
+    0 0 82px rgba(var(--primary-rgb), 0.3),
+    0 0 92px rgba(var(--primary-rgb), 0.2),
+    0 0 102px rgba(var(--primary-rgb), 0.1),
+    0 0 151px rgba(var(--primary-rgb), 0.1);
+}
+
+.title.effect-cosmic {
+  background: linear-gradient(
+    135deg,
+    var(--cosmic-gradient-1),
+    var(--cosmic-gradient-2),
+    var(--cosmic-gradient-1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
+  animation: cosmic-shift 8s ease infinite;
+}
+
+.title.effect-shadow {
+  color: var(--text-primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title.effect-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--text-primary);
+}
+
+.title.effect-glitch {
+  position: relative;
+  color: var(--text-primary);
+}
+
+.title.effect-glitch .glitch-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.title.effect-glitch .glitch-layer:first-child {
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+  color: var(--primary);
+  z-index: -1;
+}
+
+.title.effect-glitch .glitch-layer:last-child {
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+  color: var(--secondary);
+  z-index: -2;
+}
+
+/* Animations */
+.title.animation-fade {
+  animation: fade-in 0.5s ease-out;
+}
+
+.title.animation-slide {
+  animation: slide-in 0.5s ease-out;
+}
+
+.title.animation-bounce {
+  animation: bounce-in 0.8s cubic-bezier(0.36, 0, 0.66, -0.56);
+}
+
+.title.animation-wave {
+  animation: wave 1s ease-in-out infinite;
+}
+
+.title.animation-typing .typing-text {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 0.15em solid var(--text-primary);
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Responsive */
+.title.responsive {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+@media (max-width: 768px) {
+  .title.responsive.size-4xl { font-size: var(--font-size-2xl); }
+  .title.responsive.size-3xl { font-size: var(--font-size-xl); }
+  .title.responsive.size-2xl { font-size: var(--font-size-lg); }
+  .title.responsive.size-xl { font-size: var(--font-size-md); }
+  .title.responsive.size-lg { font-size: var(--font-size-sm); }
+  
+  .title.responsive.width-half,
+  .title.responsive.width-third,
+  .title.responsive.width-quarter {
+    width: 100%;
+  }
+}
+
+/* Keyframes */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--text-primary) }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes cosmic-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: inset(80% 0 20% 0);
+    transform: translate(-2px, 2px);
+  }
+  20% {
+    clip-path: inset(20% 0 80% 0);
+    transform: translate(2px, -2px);
+  }
+  40% {
+    clip-path: inset(50% 0 30% 0);
+    transform: translate(1px, 1px);
+  }
+  60% {
+    clip-path: inset(30% 0 70% 0);
+    transform: translate(-1px, -1px);
+  }
+  80% {
+    clip-path: inset(70% 0 10% 0);
+    transform: translate(2px, 2px);
+  }
+  100% {
+    clip-path: inset(10% 0 90% 0);
+    transform: translate(-2px, -2px);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: inset(20% 0 80% 0);
+    transform: translate(2px, -2px);
+  }
+  20% {
+    clip-path: inset(80% 0 20% 0);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    clip-path: inset(30% 0 50% 0);
+    transform: translate(1px, -1px);
+  }
+  60% {
+    clip-path: inset(70% 0 30% 0);
+    transform: translate(-1px, 1px);
+  }
+  80% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    clip-path: inset(90% 0 10% 0);
+    transform: translate(2px, 2px);
+  }
+} 

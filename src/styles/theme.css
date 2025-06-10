@@ -1,0 +1,245 @@
+:root {
+  /* Gray scale */
+  --gray-100: #f1f1ff;
+  --gray-200: #e1e2ff;
+  --gray-300: #c8caff;
+  --gray-400: #9597db;
+  --gray-500: #7a7cb8;
+  --gray-600: #606295;
+  --gray-700: #484a72;
+  --gray-800: #30324f;
+  --gray-900: #1a1b2c;
+
+  /* Primary colors based on #747bff */
+  --primary-light: #a5a9ff;
+  --primary: #747bff;
+  --primary-dark: #4850cc;
+  --primary-rgb: 116, 123, 255; /* RGB values for primary color */
+
+  /* Link colors */
+  --link-color: #747bff;
+  --link-hover: #4850cc;
+
+  /* Status colors */
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --error: #ef4444;
+  --info: #38bdf8;
+
+  /* Text over colors */
+  --text-over-primary: #ffffff;
+  --text-over-primary-dark: #ffffff;
+  --text-over-primary-light: #1a1b2c;
+  --text-over-success: #1a1b2c;
+  --text-over-warning: #1a1b2c;
+  --text-over-error: #ffffff;
+  --text-over-info: #1a1b2c;
+
+  /* Text colors */
+  --text-default: #1a1b2c;
+  --text-muted: #606295;
+
+  /* Disabled state */
+  --disabled: #9597db;
+  --text-disabled: #7a7cb8;
+
+  /* Base colors */
+  --primary: #6366f1;
+  --primary-rgb: 99, 102, 241;
+  --primary-dark: #4f46e5;
+  --primary-light: #818cf8;
+  --secondary: #14b8a6;
+  --secondary-rgb: 20, 184, 166;
+  
+  /* Text colors */
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --text-over-primary: #ffffff;
+  --text-over-secondary: #ffffff;
+  
+  /* Background colors */
+  --bg-primary: #1f2937;
+  --bg-secondary: #374151;
+  --bg-dark: #111827;
+  --bg-gradient-start: #111827;
+  --bg-gradient-end: #1f2937;
+  
+  /* Card effects */
+  --card-shadow-color: rgba(0, 0, 0, 0.4);
+  --card-shadow-hover: rgba(0, 0, 0, 0.5);
+  --card-glass-bg: rgba(255, 255, 255, 0.05);
+  --card-glass-border: rgba(255, 255, 255, 0.1);
+  --card-glass-reflection: rgba(255, 255, 255, 0.2);
+  
+  /* Cosmic effect colors */
+  --cosmic-gradient-1: #1e1b4b;
+  --cosmic-gradient-2: #4338ca;
+  --cosmic-star-color: #ffffff;
+  --cosmic-glow: rgba(255, 255, 255, 0.2);
+  
+  /* Interactive effects */
+  --ripple-color: rgba(255, 255, 255, 0.3);
+  --flash-color: rgba(255, 255, 255, 0.5);
+  --disabled-opacity: 0.6;
+  
+  /* Animation timings */
+  --animation-speed-fast: 0.2s;
+  --animation-speed-normal: 0.3s;
+  --animation-speed-slow: 0.6s;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  
+  /* Border radius */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-full: 9999px;
+  
+  /* Card sizes */
+  --card-size-small: 100px;
+  --card-size-default: 150px;
+  --card-size-big: 200px;
+  --card-size-ultra: 300px;
+  
+  /* Icon sizes */
+  --icon-size-small: 24px;
+  --icon-size-default: 32px;
+  --icon-size-big: 48px;
+  --icon-size-ultra: 64px;
+  
+  /* Z-index layers */
+  --z-index-base: 1;
+  --z-index-card: 2;
+  --z-index-overlay: 3;
+  --z-index-modal: 100;
+  
+  /* Transitions */
+  --transition-base: all 0.2s ease-out;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  
+  /* Card specific effects */
+  --card-tilt-amount: 15deg;
+  --card-float-amount: 10px;
+  --card-bounce-amount: 20px;
+  --card-spin-amount: 180deg;
+  --card-magnetic-strength: 40;
+  --card-pulse-scale: 1.2;
+  --card-shake-angle: 10deg;
+  --card-wave-amplitude: 10px;
+  
+  /* 3D effect variables */
+  --card-perspective: 1500px;
+  --card-z-distance: 40px;
+  --card-hover-lift: 10px;
+  
+  /* Neon effect variables */
+  --neon-glow-intensity: 20px;
+  --neon-border-width: 2px;
+  
+  /* Glass effect variables */
+  --glass-blur-amount: 10px;
+  --glass-opacity: 0.1;
+  --glass-border-opacity: 0.2;
+  --glass-reflection-opacity: 0.4;
+  
+  /* Ripple effect variables */
+  --ripple-size: 100px;
+  --ripple-scale: 4;
+  --ripple-duration: 0.6s;
+  
+  /* Layout constraints */
+  --container-max-width: 1200px;
+  --container-padding: var(--spacing-xl);
+  --grid-min-column-size: 200px;
+  --grid-gap: var(--spacing-xl);
+
+  /* Font sizes */
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 1rem;      /* 16px */
+  --font-size-md: 1.5rem;    /* 24px */
+  --font-size-lg: 2rem;      /* 32px */
+  --font-size-xl: 3rem;      /* 48px */
+  --font-size-2xl: 4rem;     /* 64px */
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --primary: #818cf8;
+  --primary-dark: #6366f1;
+  --primary-light: #a5b4fc;
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --text-disabled: #6b7280;
+  --bg-primary: #1f2937;
+  --bg-secondary: #374151;
+  --bg-dark: #111827;
+  --bg-gradient-start: #111827;
+  --bg-gradient-end: #1f2937;
+  --card-shadow-color: rgba(0, 0, 0, 0.4);
+  --card-shadow-hover: rgba(0, 0, 0, 0.5);
+  --card-glass-bg: rgba(255, 255, 255, 0.05);
+  --card-glass-border: rgba(255, 255, 255, 0.1);
+  --card-glass-reflection: rgba(255, 255, 255, 0.2);
+  --cosmic-gradient-1: #1e1b4b;
+  --cosmic-gradient-2: #4338ca;
+  --ripple-color: rgba(255, 255, 255, 0.2);
+  --flash-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Light theme */
+[data-theme="light"] {
+  /* Base colors */
+  --primary: #4f46e5;
+  --primary-rgb: 79, 70, 229;
+  --primary-dark: #4338ca;
+  --primary-light: #6366f1;
+  --secondary: #0d9488;
+  --secondary-rgb: 13, 148, 136;
+  
+  /* Text colors */
+  --text-primary: #334155;
+  --text-secondary: #64748b;
+  --text-over-primary: #ffffff;
+  --text-over-secondary: #ffffff;
+  --text-disabled: #94a3b8;
+  
+  /* Background colors */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-dark: #e2e8f0;
+  --bg-gradient-start: #f8fafc;
+  --bg-gradient-end: #f1f5f9;
+  
+  /* Card effects */
+  --card-shadow-color: rgba(51, 65, 85, 0.1);
+  --card-shadow-hover: rgba(51, 65, 85, 0.2);
+  --card-glass-bg: rgba(255, 255, 255, 0.7);
+  --card-glass-border: rgba(255, 255, 255, 0.8);
+  --card-glass-reflection: rgba(255, 255, 255, 0.9);
+  
+  /* Cosmic effect colors */
+  --cosmic-gradient-1: #e0e7ff;
+  --cosmic-gradient-2: #a5b4fc;
+  --cosmic-star-color: #4f46e5;
+  --cosmic-glow: rgba(79, 70, 229, 0.2);
+  
+  /* Interactive effects */
+  --ripple-color: rgba(79, 70, 229, 0.2);
+  --flash-color: rgba(79, 70, 229, 0.3);
+  --disabled-opacity: 0.6;
+}
+

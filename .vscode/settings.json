@@ -1,0 +1,17 @@
+{
+  "window.zoomLevel": 0,
+  "breadcrumbs.enabled": false,
+  "editor.fontSize": 14,
+  "debug.console.fontSize": 14,
+  "terminal.integrated.fontSize": 14,
+  "editor.glyphMargin": false,
+  "editor.lineNumbers": "off",
+  "files.eol": "\n",
+"cssVariables.lookupFiles": [
+    "src/styles/**/*.css",
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less"
+  ]
+}

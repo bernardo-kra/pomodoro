@@ -1,0 +1,207 @@
+/* Base styles */
+.icon-card-3d-wrapper {
+  perspective: var(--card-perspective);
+  padding: var(--spacing-md);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Card sizes */
+.size-small {
+  width: var(--card-size-small);
+  height: var(--card-size-small);
+}
+
+.size-default {
+  width: var(--card-size-default);
+  height: var(--card-size-default);
+}
+
+.size-big {
+  width: var(--card-size-big);
+  height: var(--card-size-big);
+}
+
+.size-ultra {
+  width: var(--card-size-ultra);
+  height: var(--card-size-ultra);
+}
+
+/* Icon sizes */
+.icon-wrapper.icon-size-small {
+  font-size: var(--icon-size-small);
+}
+
+.icon-wrapper.icon-size-default {
+  font-size: var(--icon-size-default);
+}
+
+.icon-wrapper.icon-size-big {
+  font-size: var(--icon-size-big);
+}
+
+.icon-wrapper.icon-size-ultra {
+  font-size: var(--icon-size-ultra);
+}
+
+/* Base card styles */
+.icon-card-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  transition: all 0.2s ease-out;
+}
+
+.icon-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(40px);
+  transition: transform 0.2s ease-out;
+  backface-visibility: hidden;
+}
+
+.card-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transform: translateZ(-40px);
+  filter: blur(20px);
+  transition: all 0.2s ease-out;
+}
+
+/* Motion effects specific styles */
+.motion-float .icon-card-3d {
+  transition: transform 0.1s ease-out;
+}
+
+.motion-bounce .icon-card-3d {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.motion-spin .icon-card-3d {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.motion-spin .icon-wrapper {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.motion-wave .icon-card-3d {
+  animation: wave 3s infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Classic effect */
+.effect-classic {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.effect-classic .card-shadow {
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0.5;
+}
+
+.effect-classic.hovered {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.effect-classic.hovered .card-shadow {
+  opacity: 0.8;
+  transform: translateZ(-60px);
+}
+
+/* Neon effect */
+.effect-neon {
+  box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.5);
+  border: 2px solid var(--primary);
+}
+
+.effect-neon .neon-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: transparent;
+  transition: all 0.2s ease-out;
+  opacity: 0;
+  box-shadow: 
+    0 0 20px var(--primary),
+    0 0 40px var(--primary);
+}
+
+.effect-neon.hovered .neon-glow {
+  opacity: 0.5;
+}
+
+/* Glass effect */
+.effect-glass {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.effect-glass .glass-reflection {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 100%
+  );
+  border-radius: 20px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-out;
+}
+
+.effect-glass.hovered .glass-reflection {
+  opacity: 0.8;
+}
+
+/* Metallic effect */
+.effect-metallic {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  ) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.effect-metallic .metallic-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 45%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.1) 55%,
+    transparent 100%
+  );
+  border-radius: 20px;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-out;
+}
+
+.effect-metallic.hovered .metallic-shine {
+  transform: translateX(100%);
+} 

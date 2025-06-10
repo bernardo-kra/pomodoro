@@ -1,0 +1,39 @@
+.cards-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-description {
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 60ch;
+  margin: var(--spacing-md) auto var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-column-size), 1fr));
+  gap: var(--grid-gap);
+  place-items: center;
+}
+
+.card-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .cards-section {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .section-description {
+    padding: 0 var(--spacing-md);
+    margin: var(--spacing-sm) auto var(--spacing-md);
+  }
+
+  .cards-grid {
+    gap: var(--spacing-lg);
+  }
+} 
