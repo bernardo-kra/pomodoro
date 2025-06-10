@@ -34,6 +34,15 @@ npm run dev
 yarn dev
 ```
 
+## 📖 Documentação
+
+Para contribuir com o projeto, por favor leia nosso [Guia de Contribuição](CONTRIBUTING.md) que contém:
+- Padrões de código
+- Fluxo de desenvolvimento
+- Guia de estilos
+- Padrões de commit
+- E muito mais!
+
 ## 🌿 Branches
 
 - `main`: Branch de produção, contém o código estável
@@ -102,3 +111,7 @@ Seguimos o padrão Semantic Versioning (MAJOR.MINOR.PATCH):
 3. Commit suas mudanças (`git commit -m 'feat: descrição da feature'`)
 4. Push para a branch (`git push origin feature/nome-da-feature`)
 5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para detalhes.
