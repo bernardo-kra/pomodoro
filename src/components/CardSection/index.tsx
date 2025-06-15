@@ -1,5 +1,5 @@
-import { Title } from '../Title/Title';
-import { IconCards3d } from '../Card3d/IconCards3d';
+import { Title } from '../Title';
+import { IconCards3d } from '../Card3d';
 import type { CardConfig } from '../../types/components';
 import './CardSection.css';
 

@@ -7,6 +7,7 @@
   "editor.glyphMargin": false,
   "editor.lineNumbers": "off",
   "files.eol": "\n",
+  "workbench.editor.labelFormat": "medium",
 "cssVariables.lookupFiles": [
     "src/styles/**/*.css",
     "**/*.css",
