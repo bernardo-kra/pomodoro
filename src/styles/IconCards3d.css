@@ -102,9 +102,12 @@
 }
 
 @keyframes wave {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -142,7 +145,7 @@
   background: transparent;
   transition: all 0.2s ease-out;
   opacity: 0;
-  box-shadow: 
+  box-shadow:
     0 0 20px var(--primary),
     0 0 40px var(--primary);
 }
@@ -154,6 +157,7 @@
 /* Glass effect */
 .effect-glass {
   background: rgba(255, 255, 255, 0.1) !important;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -161,11 +165,9 @@
 .effect-glass .glass-reflection {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      transparent 100%);
   border-radius: 20px;
   opacity: 0.5;
   transition: opacity 0.2s ease-out;
@@ -177,26 +179,22 @@
 
 /* Metallic effect */
 .effect-metallic {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0.1) 100%
-  ) !important;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.1) 100%) !important;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .effect-metallic .metallic-shine {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    45deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.1) 45%,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(255, 255, 255, 0.1) 55%,
-    transparent 100%
-  );
+  background: linear-gradient(45deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 45%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.1) 55%,
+      transparent 100%);
   border-radius: 20px;
   transform: translateX(-100%);
   transition: transform 0.5s ease-out;
@@ -204,4 +202,4 @@
 
 .effect-metallic.hovered .metallic-shine {
   transform: translateX(100%);
-} 
+}

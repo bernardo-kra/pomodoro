@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import './Title.css';
+import './styles.module.css';
 
 type TitleSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl';
 type TitleWeight = 'light' | 'regular' | 'medium' | 'semibold' | 'bold' | 'black';
