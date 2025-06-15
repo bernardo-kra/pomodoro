@@ -1,7 +1,7 @@
 import './styles/App.css';
-import { ThemeToggle } from './components/ThemeToggle/ThemeToggle';
-import { CardSection } from './components/CardSection/CardSection';
-import { Title } from './components/Title/Title';
+import { ThemeToggle } from './components/ThemeToggle';
+import { CardSection } from './components/CardSection';
+import { Title } from './components/Title';
 import { CARD_SECTIONS } from './constants/cards';
 
 function App() {
